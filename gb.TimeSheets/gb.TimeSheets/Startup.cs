@@ -1,3 +1,4 @@
+using gb.TimeSheets.Repos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,9 +32,15 @@ namespace gb.TimeSheets
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "gb.TimeSheets", Version = "v1" });
+                c.IncludeXmlComments(GetXmlCommentsPath());
             });
+            services.AddSingleton<IFakeRepository, FakeRepository>();
+            //
         }
-
+        private static string GetXmlCommentsPath()
+        {
+            return String.Format(@"{0}\SwaggerDoc.XML", AppDomain.CurrentDomain.BaseDirectory);
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
