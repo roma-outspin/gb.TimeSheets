@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>gb.TimeSheets</name>
+    </assembly>
+    <members>
+        <member name="M:gb.TimeSheets.Controllers.PersonController.Get(System.Int32)">
+            <summary>
+            Get person by ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:gb.TimeSheets.Controllers.PersonController.SearchByName(System.String)">
+            <summary>
+            Search person by first name (case sensitive)
+            </summary>
+            <param name="firstName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:gb.TimeSheets.Controllers.PersonController.Paginate(System.Int32,System.Int32)">
+            <summary>
+            Get persons for pagination 
+            </summary>
+            <param name="skip"></param>
+            <param name="take"></param>
+            <returns></returns>
+        </member>
+        <member name="M:gb.TimeSheets.Controllers.PersonController.Create(gb.TimeSheets.Repos.Person)">
+            <summary>
+            Create new person
+            </summary>
+            <param name="person"></param>
+        </member>
+        <member name="M:gb.TimeSheets.Controllers.PersonController.Update(gb.TimeSheets.Repos.Person)">
+            <summary>
+            Update person (updating in base by id)
+            </summary>
+            <param name="person"></param>
+        </member>
+        <member name="M:gb.TimeSheets.Controllers.PersonController.Delete(System.Int32)">
+            <summary>
+            Delete person (removing from base by id)
+            </summary>
+            <param name="id"></param>
+        </member>
+    </members>
+</doc>
